@@ -1,4 +1,5 @@
 import React, { PureComponent, ReactNode } from 'react'
+import { StyleProp, ViewStyle } from 'react-native'
 import Collapsible, { EasingMode } from 'react-native-collapsible'
 import {
 	ExpandableText,
@@ -10,6 +11,7 @@ import {
 interface Props extends ExpandableTextProps {
 	duration?: number
 	easing?: EasingMode
+	style?: StyleProp<ViewStyle>
 }
 
 interface State {
@@ -54,15 +56,16 @@ export class AnimatedExpandableText extends PureComponent<Props, State> {
 	}
 
 	public render(): ReactNode {
-		const { children, numberOfLines } = this.props
+		const { children, duration, easing, numberOfLines, style } = this.props
 
 		return (
 			<Collapsible
+				style={style}
 				align='top'
 				collapsed={this.state.isCollapsed}
 				collapsedHeight={this.state.collapsedHeight}
-				duration={this.props.duration}
-				easing={this.props.easing}
+				duration={duration}
+				easing={easing}
 				onAnimationEnd={this.onAnimationEnd}
 			>
 				<ExpandableText
