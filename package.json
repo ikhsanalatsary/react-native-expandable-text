@@ -31,11 +31,10 @@
 		"lint": "tslint -p tsconfig.json",
 		"test": "jest --config jest.config.json",
 		"test:coverage:lcov": "yarn test --coverage --coverageReporters=text-lcov",
-		"watch:dev:example": "chokidar \"dist/*\" -c ./scripts/watch-dev-changes"
+		"watch:dev:example": "chokidar \"dist/*\" -c ./scripts/watch-dev-changes",
+		"postinstall": "npm run build"
 	},
 	"dependencies": {
-		"react": "^16.7.0",
-		"react-native": "^0.57.8",
 		"react-native-collapsible": "^1.4.0"
 	},
 	"devDependencies": {
@@ -65,6 +64,10 @@
 		"tslint": "^5.12.1",
 		"tslint-config-prettier": "^1.17.0",
 		"typescript": "^3.2.2"
+	},
+	"peerDependencies": {
+		"react": "*",
+		"react-native": "*"
 	},
 	"husky": {
 		"hooks": {
