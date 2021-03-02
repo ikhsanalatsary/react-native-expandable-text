@@ -1,7 +1,9 @@
 import { ReactNode } from 'react'
-import { NativeMethods } from 'react-native'
+import { NativeComponent } from 'react-native'
 
-export async function measureHeight(component: NativeMethods): Promise<number> {
+export async function measureHeight(
+	component: NativeComponent,
+): Promise<number> {
 	return new Promise(resolve => {
 		component.measure((x, y, w, h) => resolve(h))
 	})

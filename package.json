@@ -40,7 +40,7 @@
 	"devDependencies": {
 		"@types/enzyme-adapter-react-16": "^1.0.3",
 		"@types/jest": "^23.3.12",
-		"@types/react-native": "^0.63.50",
+		"@types/react-native": "^0.61.7",
 		"chokidar-cli": "^1.2.1",
 		"enzyme": "^3.11.0",
 		"enzyme-adapter-react-16": "^1.7.1",
